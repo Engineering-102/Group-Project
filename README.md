@@ -1,0 +1,1 @@
+Under your selective functions, Jai's is num_game and Tyler's is adventure_game input your code. Make sure that you use the variable "start" and set it to no in order to return to the menu, as well as keeping the game running as long as the variable is equal to yes
