@@ -46,7 +46,7 @@ def adventure_game():
     return(start)
 start="no"
 while start.lower()=="no":
-    game_choice=int(input("Menu: Please select a game to play:\n1. Wordle\n2. Number Guessing Game\n3. Adventure Game\n"))
+    game_choice=int(input("Menu: Please select a game number to play:\n1. Wordle\n2. Number Guessing Game\n3. Adventure Game\n"))
     if game_choice==1:
         wordle()
     if game_choice==2:
