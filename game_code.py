@@ -89,7 +89,7 @@ def num_game():
 def adventure_game():
     response = ""
     start=input("Welcome to a dungeon crawler adventure! You are a hobbit who is attempting to find the long lost treasure of King Mayo. Use your quick thinking and respond carefully to make it out alive... Would you like to play?")
-    while start.lower=="yes":
+    while start.lower()=="yes":
         print("Input EXIT at any time to leave the game")
         response = input("You walk into the entrance of the dungeon and are immediately faced with two doors, the left one reeks of manure, while the right smells of a fireplace. Which one do you choose: left or right?")
         if response=="EXIT":
