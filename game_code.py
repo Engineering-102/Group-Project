@@ -36,7 +36,39 @@ def wordle():
         start = input("Would you like to play again? (yes/no): ")
     return(start)
 def num_game():
-    print("Game in Progress")
+    start = input("Directions: Guess a number between 1 and 100. You have 6 tries. After each guess, you will find out if you were too high or too low from the correct answer. Would you like to play? (yes/no): ")
+    attempts = 7
+    while start == "yes":
+        random_number = random.randint(1, 100)
+        attempt = 1
+
+        while attempt <= attempts:
+            guess = input(f"Attempt {attempt}/7 - Enter your guess: ")
+
+        try:
+            guess = int(guess)
+        except ValueError:
+            print("Please enter a valid number.")
+            continue  
+
+        if guess < 1 or guess > 100:
+            print("Please enter a number between 1 and 100.")
+            continue  
+
+        if guess == random_number:
+            print("\nCongratulations! You guessed the correct number!")
+            print("You guessed it in", attempt, "attempt(s).")
+            break  
+        elif guess < random_number:
+            print("Too Low! Try a higher number.")
+        else:
+            print("Too High! Try a lower number.")
+
+        attempt += 1
+
+    else:
+        print("Game Over!")
+        print("The correct number was:", random_number)
     start="no"
     return(start)
     
