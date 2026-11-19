@@ -44,8 +44,8 @@ def num_game():
 
         while attempt <= attempts:
             guess = input(f"Attempt {attempt}/7 - Enter your guess: ")
-            if guess== EXIT:
-                start=no
+            if guess== "EXIT":
+                start="no"
                 break
             try:
                 guess = int(guess)
