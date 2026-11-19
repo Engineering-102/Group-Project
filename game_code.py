@@ -44,38 +44,40 @@ def num_game():
 
         while attempt <= attempts:
             guess = input(f"Attempt {attempt}/7 - Enter your guess: ")
+            if guess== EXIT:
+                start=no
+                break
+            try:
+                guess = int(guess)
+            except ValueError:
+                print("Please enter a valid number.")
+                continue  
 
-        try:
-            guess = int(guess)
-        except ValueError:
-            print("Please enter a valid number.")
-            continue  
+            if guess < 1 or guess > 100:
+                print("Please enter a number between 1 and 100.")
+                continue  
 
-        if guess < 1 or guess > 100:
-            print("Please enter a number between 1 and 100.")
-            continue  
+            if guess == random_number:
+                print("\nCongratulations! You guessed the correct number!")
+                print("You guessed it in", attempt, "attempt(s).")
+                break  
+            elif guess < random_number:
+                print("Too Low! Try a higher number.")
+            else:
+                print("Too High! Try a lower number.")
 
-        if guess == random_number:
-            print("\nCongratulations! You guessed the correct number!")
-            print("You guessed it in", attempt, "attempt(s).")
-            break  
-        elif guess < random_number:
-            print("Too Low! Try a higher number.")
+            attempt += 1
+
         else:
-            print("Too High! Try a lower number.")
-
-        attempt += 1
-
-    else:
-        print("Game Over!")
-        print("The correct number was:", random_number)
-    start="no"
+            print("Game Over!")
+            print("The correct number was:", random_number)
+        start=input("Would you like to play again?")
     return(start)
     
 def adventure_game():
     response = ""
     start=input("Welcome to a dungeon crawler adventure! You are a hobbit who is attempting to find the long lost treasure of King Mayo. Use your quick thinking and respond carefully to make it out alive... Would you like to play?")
-    while start.lower=="yes" while start.lower=="yes"
+    while start.lower=="yes":
         response = input("You walk into the entrance of the dungeon and are immediately faced with two doors, the left one reeks of manure, while the right smells of a fireplace. Which one do you choose: left or right?")
         if response=="EXIT":
                             print("Exiting the game. Goodbye!")
@@ -159,7 +161,7 @@ def adventure_game():
                 print("The wizard doesn't understand you and goes back to his nap. You wander the dungeon forever, wishing you weren't so stupid. GAME OVER.")
         else:
             print("You stand frozen with fear deciding between the two doors. Eventually you give up and leave to take on the family fertilizer buisness GAME OVER.")
-        start=input("Would you like to play again?)
+        start=input("Would you like to play again?")
     return (start)
       
 start="no"
