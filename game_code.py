@@ -41,9 +41,70 @@ def num_game():
     return(start)
     
 def adventure_game():
-    print("Game in Progress")
-    start="no"
-    return(start)
+    response = ""
+    print("Welcome to a dungeon crawler adventure! You are a hobbit who is attempting to find the long lost treasure of King Mayo. Use your quick thinking and respond carefully to make it out alive...")
+    response = input("You walk into the entrance of the dungeon and are immediately faced with two doors, the left one reeks of manure, while the right smells of a fireplace. Which one do you choose: left or right?")
+    if (response == "left" or response == "Left"):
+        response = input("You walk into the room and see a giant stinky troll with a very large brown spot in his pants. There is a key hanging on the while behind him that opens the door. Do you sneak past or attack? ")
+
+        if (response == "sneak" or response == "Sneak"):
+            response = input("You sneak past the troll and grab the key. As you turn around, the troll burps lets out a loud snort but stays asleep. In front of you is a ladder going down and a narrow tunnel. Which do you take: ladder or tunnel? ")
+
+            if (response == "ladder" or response == "Ladder"):
+                response = input("You climb down the ladder into a dark basement. There is a locked chest sits in the corner, glowing. Do you use the key or leave it? ")
+
+                if (response == "key" or response == "Key" or response == "use the key"):
+                    print("As soon as you turn the key, the chest slowly opens, revealing the long lost treasure of King Mayo! You leave the dungeon as the richest hobbit in the lands. YOU WIN!")
+                elif (response == "leave" or response == "Leave"):
+                    print("As you turn around away from the chest and begin heading back up the ladder, you look up to see the troll staring over you. He pushes the ladder off the dungeon wall, throwing you into the floor. GAME OVER")
+                else:
+                    print("You were undecicive. The door slams shut above you and you are trapped alone forever. GAME OVER.")
+
+            elif (response == "tunnel" or response == "Tunnel"):
+                print("You work you way into the narrow tunnel, but as you continue forward the walls getting closer and closer, until eventually you are stuck and unable to move. GAME OVER.")
+            else:
+                print("While you deliberate, the troll wakes up and throws you in its mouth. GAME OVER.")
+
+        elif (response == "attack" or response == "Attack"):
+            print("You swing your tiny dagger at the troll's toe. He wakes up, very annoyed, and throws you against the wall, breaking your back. GAME OVER.")
+        else:
+            print("You trip over a bucket, the troll wakes up, and evicts you from his place. GAME OVER.")
+
+    elif (response == "right" or response == "Right"):
+        response = input("You walk into a warm room with a blazing fireplace. An old wizard is standing inside and offers you a riddle. If you answer correctly, he will help you find King Mayo's treasure. Do you accept or refuse? ")
+
+        if (response == "accept" or response == "Accept"):
+            response = input("The wizard asks: 'What has keys but can't open locks?' ")
+
+            if (response == "piano" or response == "Piano" or response == "a piano" or response == "A piano"):
+                response = input("'Induibitibly' says the wizard. He points to two paths. A wooden bridge over a lava pit, or a staircase guarded by a sleeping dragon. Which do you choose: bridge or stairs? ")
+
+                if (response == "bridge" or response == "Bridge"):
+                    response = input("While walking across, the bridge starts to crumble! Do you test your luck and press forward, or do you go back? ")
+
+                    if (response == "forward" or response == "Forward" or response == "run"):
+                        print("You run across just as the bridge collapses behind you. As you begin to walk forward you see the treasure of King Mayo, atop a pile of skelatons. YOU WIN!")
+                    else:
+                        print("You turn back, but the bridge gives way beneath you. GAME OVER.")
+
+                elif (response == "stairs" or response == "Stairs"):
+                    print("You walk carefully up the stairs, but the dragon smells the manure on... wait, you didn't go in that room. The dragon wakes up anyways because you stink still. GAME OVER.")
+                else:
+                    print("The wizard sighs at your indecision and turns you into a toad. GAME OVER.")
+
+            else:
+                print("'Wrong!' screams the wizard, and he teleports you back outside the dungeon. Better luck next time. GAME OVER.")
+
+        elif (response == "refuse" or response == "Refuse"):
+            print("The wizard is offended and sets your cloak on fire with a snap of his fingers. You run out of the dungeon screaming. GAME OVER.")
+        else:
+            print("The wizard doesn't understand you and goes back to his nap. You wander the dungeon forever, wishing you weren't so stupid. GAME OVER.")
+    else:
+        print("You stand frozen with fear deciding between the two doors. Eventually you give up and leave to take on the family fertilizer buisness GAME OVER.")
+
+    start = "no"
+    return (start)
+      
 start="no"
 while start.lower()=="no":
     game_choice=int(input("Menu: Please select a game number to play:\n1. Wordle\n2. Number Guessing Game\n3. Adventure Game\n"))
