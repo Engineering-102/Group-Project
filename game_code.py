@@ -36,7 +36,7 @@ def wordle():
         start = input("Would you like to play again? (yes/no): ")
     return(start)
 def num_game():
-    start = input("Directions: Guess a number between 1 and 100. You have 6 tries. After each guess, you will find out if you were too high or too low from the correct answer. Would you like to play? (yes/no): ")
+    start = input("Directions: Guess a number between 1 and 100. You have 6 tries. After each guess, you will find out if you were too high or too low from the correct answer. Input EXIT at any time to leave the game. Would you like to play? (yes/no): ")
     attempts = 7
     while start == "yes":
         random_number = random.randint(1, 100)
@@ -78,6 +78,7 @@ def adventure_game():
     response = ""
     start=input("Welcome to a dungeon crawler adventure! You are a hobbit who is attempting to find the long lost treasure of King Mayo. Use your quick thinking and respond carefully to make it out alive... Would you like to play?")
     while start.lower=="yes":
+        print("Input EXIT at any time to leave the game")
         response = input("You walk into the entrance of the dungeon and are immediately faced with two doors, the left one reeks of manure, while the right smells of a fireplace. Which one do you choose: left or right?")
         if response=="EXIT":
                             print("Exiting the game. Goodbye!")
